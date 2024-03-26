@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+enum Tab {
+    case profile
+}
 
 struct ContentView: View {
     var body: some View {
         VStack {
+            ProfileView()
+                .tabItem{
+                    
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
+            
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
@@ -19,6 +29,23 @@ struct ContentView: View {
     }
 }
 
+struct ProfileView: View {
+    var body: some View {
+        Text("Profile Tab")
+    }
+}
+
+//struct SearchView: View {
+//    var body: some View {
+//        text("Search Tab")
+//    }
+//}
+//
+//struct ScanView: View {
+//    var body: some View {
+//        text("Scan Tab")
+//    }
+//}
 #Preview {
     ContentView()
 }
