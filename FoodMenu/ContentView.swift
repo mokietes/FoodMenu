@@ -35,17 +35,17 @@ struct ProfileView: View {
     }
 }
 
-//struct SearchView: View {
-//    var body: some View {
-//        text("Search Tab")
-//    }
-//}
-//
-//struct ScanView: View {
-//    var body: some View {
-//        text("Scan Tab")
-//    }
-//}
+struct SearchView: View {
+    var body: some View {
+        Text("Search Tab")
+    }
+}
+
+struct ScanView: View {
+    var body: some View {
+        Text("Scan Tab")
+    }
+}
 #Preview {
     ContentView()
 }
