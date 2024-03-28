@@ -28,6 +28,12 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
+            ScanView()
+                .tabItem {
+                    Image(systemName: "barcode.viewfinder")
+                    Text("scan")
+            }
+                .tag(Tab.scan)
         }
     }
 }
