@@ -39,8 +39,17 @@ struct ContentView: View {
 }
 
 struct ProfileView: View {
+    
+    @State private var newRecipeName: String = ""
+    @State private var newRecipeIngredients: String = ""
+    @State private var newRecipeInstruction: String = ""
+    @State private var savedRecepies: String = ""
+    
     var body: some View {
-        Text("Profile Tab")
+        VStack {
+            TextField("Recipe Name", text: $newRecipeName)
+                .padding()
+        }
     }
 }
 
