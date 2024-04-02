@@ -43,12 +43,20 @@ struct ProfileView: View {
     @State private var newRecipeName: String = ""
     @State private var newRecipeIngredients: String = ""
     @State private var newRecipeInstruction: String = ""
-    @State private var savedRecepies: String = ""
+    @State private var savedRecepies: [Recipe] = []
     
     var body: some View {
         VStack {
             TextField("Recipe Name", text: $newRecipeName)
                 .padding()
+            TextField("Ingredients", text: $newRecipeIngredients)
+                .padding()
+            TextField("Instructions", text: $newRecipeInstruction)
+                .padding()
+            Button ("Save Recipe") {
+                let newRecipe = Recipe (name: newRecipeName, ingredients: newRecipeIngredients, instructions: newRecipeIngredients)
+                savedRecepies.append(newRecipe)
+            }
         }
     }
 }
