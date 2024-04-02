@@ -38,6 +38,13 @@ struct ContentView: View {
     }
 }
 
+struct Recipe: Identifiable {
+    var id = UUID()
+    var name: String
+    var ingredients: String
+    var instruction: String
+}
+
 struct ProfileView: View {
     
     @State private var newRecipeName: String = ""
@@ -54,8 +61,23 @@ struct ProfileView: View {
             TextField("Instructions", text: $newRecipeInstruction)
                 .padding()
             Button ("Save Recipe") {
-                let newRecipe = Recipe (name: newRecipeName, ingredients: newRecipeIngredients, instructions: newRecipeIngredients)
+                let newRecipe = Recipe(name: newRecipeName, ingredients: newRecipeIngredients, instruction: newRecipeIngredients)
                 savedRecepies.append(newRecipe)
+                
+                
+                newRecipeName = ""
+                newRecipeIngredients = ""
+                newRecipeInstruction = ""
+            }
+            .padding()
+            
+            List(savedRecepies, id: \.id) { recipe in
+                VStack(alignment: .leading ) {
+                    Text(recipe.name)
+                        .font(.headline)
+                    Text ("Ingredients: \(recipe.ingredients)")
+                        .font(.subheadline)
+                }
             }
         }
     }
