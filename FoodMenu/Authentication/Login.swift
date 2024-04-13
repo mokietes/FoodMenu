@@ -33,6 +33,15 @@ struct Login: View {
                 
                 Spacer ()
                 
+                NavigationLink {
+                }label: {
+                    HStack {
+                        Text("Don't have an account?")
+                        Text ("Sign up")
+                            .fontWeight(.bold)
+                    }
+                    .font(.system(size: 14))
+                }
             }
         }
     }
