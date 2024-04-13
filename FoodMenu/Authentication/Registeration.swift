@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct Registeration: View {
+    
+    @State private var email = ""
+    @State private var fullname = ""
+    @State private var password = ""
+    @State private var confirmPassword = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image ("logo")
+                .resizable()
+                .scaledToFit()
+                .padding(.vertical, 4)
+                .frame(width: 120, height: 120)
+            
+            VStack (spacing: 23) {
+                Input (text: $email, title: "Email Address", placeholder: "example@email.com")
+                Input (text: $fullname, title: "Full Name", placeholder: "Enter your name")
+                Input (text: $password, title: "password", placeholder: "Enter your password", isSecureField: true)
+                Input (text: $confirmPassword, title: "Confirm Password", placeholder: "Confirm your password")
+            }
+            .padding()
+            SignupButton(text: "SIGN UP", name: "SIGN Up")
+        }
     }
 }
 

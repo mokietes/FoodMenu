@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct SignupButton: View {
+    let text: String
+    let name: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            print(text)
+        } label: {
+            Text(name)
+                .fontWeight(.semibold)
+            Image(systemName: "arrow.right")
+        }
+        .fontWeight(.semibold)
     }
 }
 
 #Preview {
-    SignupButton()
+    SignupButton( text: "Log user in...", name: "Signup")
 }
+
+
+
