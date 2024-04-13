@@ -1,15 +1,40 @@
-//
-//  Login.swift
-//  FoodMenu
-//
-//  Created by patron on 4/12/24.
-//
 
 import SwiftUI
 
 struct Login: View {
+    @State private var email = ""
+    @State private var password = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack{
+                Image ("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.vertical, 4)
+                    .frame(width: 120, height: 120)
+                
+                
+                VStack(){
+                    
+                    Input(text: $email, title: "Email Address", placeholder: "example@email.com")
+                    Input(text: $password, title: "Password", placeholder:"Type your password")
+                }
+                .padding()
+                
+                Button {
+                    print("Log user in")
+                } label: {
+                    HStack {
+                        Text("SIGN IN")
+                            .fontWeight(.semibold)
+                        Image(systemName: "arrow.right")
+                    }
+                }
+                
+                Spacer ()
+                
+            }
+        }
     }
 }
 
