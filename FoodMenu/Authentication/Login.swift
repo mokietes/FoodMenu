@@ -10,11 +10,11 @@ struct Login: View {
                 Image ("logo")
                     .resizable()
                     .scaledToFit()
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 3.0)
                     .frame(width: 120, height: 120)
+                Spacer()
                 
-                
-                VStack(){
+                VStack(spacing: 23){
                     
                     Input(text: $email, title: "Email Address", placeholder: "example@email.com")
                     Input(text: $password, title: "Password", placeholder:"Type your password")
@@ -34,6 +34,7 @@ struct Login: View {
                 Spacer ()
                 
                 NavigationLink {
+                    Registeration()
                 }label: {
                     HStack {
                         Text("Don't have an account?")
@@ -42,7 +43,7 @@ struct Login: View {
                     }
                     .font(.system(size: 14))
                 }
-                //
+                
             }
         }
     }

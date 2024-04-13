@@ -13,6 +13,7 @@ struct Registeration: View {
     @State private var fullname = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @Environment (\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -31,8 +32,23 @@ struct Registeration: View {
             .padding()
             SignupButton(text: "SIGN UP", name: "SIGN Up")
         }
+        
+        Spacer()
+        
+        Button {
+            dismiss()
+        }  label: {
+                HStack (spacing: 3) {
+                    Text("Already have an account?")
+                    Text ("Sign in")
+                        .fontWeight(.bold)
+                        
+                }
+                .font(.system(size: 14))
+            }
+        }
     }
-}
+
 
 #Preview {
     Registeration()
