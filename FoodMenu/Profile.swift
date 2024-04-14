@@ -29,6 +29,12 @@ struct Profile: View {
                     }
                 }
             }
+            Section("General") {
+                
+            }
+            Section("Account") {
+                
+            }
         }
     }
 }
