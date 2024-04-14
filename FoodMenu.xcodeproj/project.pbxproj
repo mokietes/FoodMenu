@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3157C7B32BCBA6DD00789310 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157C7B22BCBA6DD00789310 /* Profile.swift */; };
 		31AE49502BC905ED0047235F /* AuthLoginApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AE494F2BC905ED0047235F /* AuthLoginApp.swift */; };
 		31AE49572BCA2CF00047235F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AE49562BCA2CF00047235F /* Login.swift */; };
 		31AE49592BCA2E820047235F /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AE49582BCA2E820047235F /* Input.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3157C7B22BCBA6DD00789310 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		31AE494F2BC905ED0047235F /* AuthLoginApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginApp.swift; sourceTree = "<group>"; };
 		31AE49562BCA2CF00047235F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		31AE49582BCA2E820047235F /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				31AE49522BCA2C570047235F /* Comp */,
 				31AE49512BCA2C180047235F /* Authentication */,
 				31D1D80D2BAFCF3F007E67BD /* Preview Content */,
+				3157C7B22BCBA6DD00789310 /* Profile.swift */,
 			);
 			path = FoodMenu;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AE49592BCA2E820047235F /* Input.swift in Sources */,
+				3157C7B32BCBA6DD00789310 /* Profile.swift in Sources */,
 				31D1D80A2BAFCF34007E67BD /* ContentView.swift in Sources */,
 				31AE49502BC905ED0047235F /* AuthLoginApp.swift in Sources */,
 				31D1D8082BAFCF34007E67BD /* FoodMenuApp.swift in Sources */,
