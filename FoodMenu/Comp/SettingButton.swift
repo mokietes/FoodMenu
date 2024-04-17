@@ -18,6 +18,9 @@ struct SettingButton: View {
                 .imageScale(.small)
                 .font(.title)
                 .foregroundColor(settingColor)
+            Text(title)
+                .font(.subheadline)
+                .foregroundStyle(.black)
             
         }
     }
