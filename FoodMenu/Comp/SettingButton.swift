@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SettingButton: View {
+    let settingImage: String
+    let title: String
+    let settingColor: Color
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image (systemName: settingImage)
+                .imageScale(.small)
+                .font(.title)
+                .foregroundColor(settingColor)
+            
+        }
     }
 }
 
 #Preview {
-    SettingButton()
+    SettingButton(settingImage: "gear", title: "IOS", settingColor: Color(.systemGray))
 }

@@ -33,6 +33,12 @@ struct Profile: View {
                 
             }
             Section("Account") {
+                Button {
+                    print("Sign out")
+                } label: {
+                    
+                }
+
                 
             }
         }
