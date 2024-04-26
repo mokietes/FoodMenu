@@ -45,8 +45,6 @@ struct Profile: View {
                 } label: {
                     SettingButton(settingImage: "xmark.circle.fill", title: "Delete Account", settingColor: .red)
                 }
-
-                
             }
         }
     }
