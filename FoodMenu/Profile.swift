@@ -30,13 +30,20 @@ struct Profile: View {
                 }
             }
             Section("General") {
-                
+                HStack {
+                    SettingButton(settingImage: "gear", title: "Version", settingColor: Color(.systemGray))
+                }
             }
             Section("Account") {
                 Button {
                     print("Sign out")
                 } label: {
-                    
+                    SettingButton(settingImage: "arrow.left.circle.fill", title: "Sign Out", settingColor: .red)
+                }
+                Button {
+                    print("Delete Account")
+                } label: {
+                    SettingButton(settingImage: "xmark.circle.fill", title: "Delete Account", settingColor: .red)
                 }
 
                 
