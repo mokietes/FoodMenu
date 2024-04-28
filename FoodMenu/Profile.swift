@@ -12,18 +12,18 @@ struct Profile: View {
         List{
             Section {
                 HStack {
-                    Text ("MT")
+                    Text (User.TEST_USER.initials)
                         .font(.title)
                         .fontWeight(.semibold)
                         .frame(width: 72, height: 72)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text ("Mokie Tes")
+                        Text (User.TEST_USER.fullname)
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .padding(.top, 4)
                         
-                        Text("example@email.com")
+                        Text(User.TEST_USER.email)
                             .font(.footnote)
                             .accentColor(.gray)
                     }

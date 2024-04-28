@@ -14,6 +14,7 @@ struct Registeration: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthModel
     
     var body: some View {
         VStack {
@@ -30,7 +31,18 @@ struct Registeration: View {
                 Input (text: $confirmPassword, title: "Confirm Password", placeholder: "Confirm your password")
             }
             .padding()
-            SignupButton(text: "SIGN UP", name: "SIGN Up")
+            
+            //SignupButton(text: "SIGN UP", name: "SIGN Up")
+            Button {
+                Task{
+                    try await viewModel.createUser(withEmail: email, password: password, fullname: fullname)
+                }
+            } label: {
+                Text("SIGN UP")
+                    .fontWeight(.semibold)
+                Image(systemName: "arrow.right")
+            }
+            .fontWeight(.semibold)
         }
         
         Spacer()

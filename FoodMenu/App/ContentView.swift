@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var selectTab: Tab = .profile
-    
-    enum Tab {
+        
+        enum Tab {
         case profile
         case search
         case scan
