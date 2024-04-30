@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct FoodMenuApp: App {
     @StateObject var viewModel = AuthModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     
     var body: some Scene {
         WindowGroup {

@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 class AuthModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
@@ -17,11 +18,19 @@ class AuthModel: ObservableObject {
     }
         
     func signIn(withEmail email: String, password: String) async throws {
-        
+        print("Sign in..")
     }
     
     func createUser (withEmail email: String, password: String, fullname: String) async throws{
-        
+        do{
+            let result = try await Auth.auth().createUser(withEmail: email, password: password)
+            self.userSession = result.user
+            let user = User(id: result.user.uid, fullname: fullname, email: email)
+            let encodedUser = try Firestore.Encoder().encode(user)
+            try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+        } catch {
+            print("Error: failled to create user \(error.localizedDescription)")
+        }
     }
     
     func signOut() {

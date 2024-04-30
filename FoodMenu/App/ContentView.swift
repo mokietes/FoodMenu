@@ -2,17 +2,29 @@
 //  ContentView.swift
 //  FoodMenu
 //
-//  Created by patron on 4/27/24.
+//  Created by patron on 3/23/24.
 //
+
+
 
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var viewModel: AuthModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            if viewModel.userSession != nil {
+                Profile()
+            } else {
+                Login()
+            }
+        }
     }
 }
 
 #Preview {
     ContentView()
 }
+
