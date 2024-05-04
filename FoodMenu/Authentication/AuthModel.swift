@@ -29,6 +29,7 @@ class AuthModel: ObservableObject {
             let user = User(id: result.user.uid, fullname: fullname, email: email)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+            await fetchUser()
         } catch {
             print("Error: failled to create user \(error.localizedDescription)")
         }
