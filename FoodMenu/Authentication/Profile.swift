@@ -38,12 +38,12 @@ struct Profile: View {
                 }
                 Section("Account") {
                     Button {
-                        print("Sign out")
+                        viewModel.signOut()
                     } label: {
                         SettingButton(settingImage: "arrow.left.circle.fill", title: "Sign Out", settingColor: .red)
                     }
                     Button {
-                        print("Delete Account")
+                        viewModel.deleteAccount()
                     } label: {
                         SettingButton(settingImage: "xmark.circle.fill", title: "Delete Account", settingColor: .red)
                     }
