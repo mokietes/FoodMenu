@@ -33,9 +33,16 @@ struct Login: View {
                         Text("SIGN IN")
                             .fontWeight(.semibold)
                         Image(systemName: "arrow.right")
+                            
                     }
+                    .foregroundColor(.white)
+                    .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }
-                
+                    .background(Color(.systemBlue))
+                    .disabled(!formIsValid)
+                    .opacity(formIsValid ? 1.0 : 0.5)
+                    .cornerRadius(12)
+                    .padding(.top, 4)
                 Spacer ()
                 
                 //sign up
@@ -52,6 +59,15 @@ struct Login: View {
                 
             }
         }
+    }
+}
+
+extension Login: AuthenticationForm {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && !password.isEmpty
+        && password.count > 5
+        && email.contains("@")
     }
 }
 
