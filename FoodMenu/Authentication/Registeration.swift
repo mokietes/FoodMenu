@@ -28,7 +28,7 @@ struct Registeration: View {
                 Input (text: $email, title: "Email Address", placeholder: "example@email.com")
                 Input (text: $fullname, title: "Full Name", placeholder: "Enter your name")
                 Input (text: $password, title: "password", placeholder: "Enter your password", isSecureField: true)
-                Input (text: $confirmPassword, title: "Confirm Password", placeholder: "Confirm your password")
+                Input (text: $confirmPassword, title: "Confirm Password", placeholder: "Confirm your password", isSecureField: true)
             }
             .padding()
             
@@ -38,12 +38,22 @@ struct Registeration: View {
                     try await viewModel.createUser(withEmail: email, password: password, fullname: fullname)
                 }
             } label: {
-                Text("SIGN UP")
-                    .fontWeight(.semibold)
-                Image(systemName: "arrow.right")
+                HStack{
+                    Text("SIGN UP")
+                        .fontWeight(.semibold)
+                    Image(systemName: "arrow.right")
+                }
+                .foregroundColor(.white)
+                .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }
-            .fontWeight(.semibold)
+                .background(Color(.systemBlue))
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
+                .cornerRadius(12)
+                .padding(.top, 4)
+            
         }
+            
         
         Spacer()
         
@@ -61,6 +71,16 @@ struct Registeration: View {
         }
     }
 
+extension Registeration: AuthenticationForm {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && !password.isEmpty
+        && password.count > 5
+        && email.contains("@")
+        && !fullname.isEmpty
+        && confirmPassword == password
+    }
+}
 
 #Preview {
     Registeration()
