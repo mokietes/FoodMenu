@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3108EFCD2BEF48D100FEB424 /* FoodScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3108EFCC2BEF48D100FEB424 /* FoodScannerView.swift */; };
 		31559BB52BDE0B7E004241FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31559BB42BDE0B7E004241FB /* ContentView.swift */; };
 		31559BB82BDE0C3B004241FB /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31559BB72BDE0C3B004241FB /* TabView.swift */; };
 		3157C7B32BCBA6DD00789310 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3157C7B22BCBA6DD00789310 /* Profile.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3108EFCC2BEF48D100FEB424 /* FoodScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodScannerView.swift; sourceTree = "<group>"; };
 		31559BB42BDE0B7E004241FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		31559BB72BDE0C3B004241FB /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		3157C7B22BCBA6DD00789310 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				31559BB72BDE0C3B004241FB /* TabView.swift */,
+				3108EFCC2BEF48D100FEB424 /* FoodScannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31559BB82BDE0C3B004241FB /* TabView.swift in Sources */,
+				3108EFCD2BEF48D100FEB424 /* FoodScannerView.swift in Sources */,
 				31AE49592BCA2E820047235F /* Input.swift in Sources */,
 				3157C7B32BCBA6DD00789310 /* Profile.swift in Sources */,
 				317EB9362BCFA24500C45CB2 /* SettingButton.swift in Sources */,
