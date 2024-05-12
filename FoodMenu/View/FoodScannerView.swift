@@ -69,7 +69,7 @@ struct FoodScannerView: View {
         }
         .padding()
         .onAppear {
-            self.scannedCode
+            self.scanBarcode()
         }
     }
     func scanBarcode(){
@@ -83,6 +83,37 @@ struct FoodScannerView: View {
             }
         }
     }
+    func fetchFoodDetails(barcode: String) {
+        isLoading = true
+        let urlString = "https://world.openfoodfacts.org/api/v0/product/\(barcode).json"
+        
+        guard let url = URL(string: urlString) else {
+                    print("Invalid URL")
+                    isLoading = false
+                    return
+                }
+                
+                let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                    isLoading = false
+                    
+                    guard let data = data else {
+                        print("No data received: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        let food = try decoder.decode(Food.self, from: data)
+                        DispatchQueue.main.async {
+                            self.food = food
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error.localizedDescription)")
+                    }
+                }
+                
+                task.resume()
+            }
 }
 
 #Preview {
