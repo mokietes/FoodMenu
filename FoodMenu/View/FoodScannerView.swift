@@ -24,6 +24,7 @@ struct FoodScannerView: View {
     @State private var isLoading = false
     @State private var isPopoverVisible = false
     
+    
     var body: some View {
         VStack {
             if isLoading {

@@ -51,6 +51,7 @@ struct Profile: View {
             }
         }
     }
+    
 }
 
 #Preview {
