@@ -28,6 +28,25 @@ struct FoodScannerView: View {
         }
 
         func fetchFoodDetails(barcode: String) {
+            guard let url = URL(string: "https://world.openfoodfacts.org/api/v0/product/\(barcode).json") else {
+                print("Invalid URL")
+                return
+            }
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    if let foodData = try? decoder.decode(FoodData.self, from: data) {
+                        DispatchQueue.main.async {
+                            self.foodDetails = FoodDetails(from: foodData.product)
+                        }
+                    } else {
+                        print("Failed to decode response")
+                    }
+                } else if let error = error {
+                    print("Error fetching data: \(error.localizedDescription)")
+                }
+            }.resume()
         }
     }
 
