@@ -26,9 +26,9 @@ struct Tabview: View {
             }.tag(Tab.profile)
             SearchView ()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "bookmark")
                 }
-            ScanView()
+            FoodScannerView()
                 .tabItem {
                     Image(systemName: "barcode.viewfinder")
                     Text("scan")
