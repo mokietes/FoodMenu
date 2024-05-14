@@ -18,6 +18,23 @@ struct FoodScannerView: View {
         var body: some View {
             NavigationView {
                 VStack {
+                    if let foodDetails = foodDetails {
+                        Text("Name: \(foodDetails.name)")
+                        Text("Brand: \(foodDetails.brand)")
+                        Text("Category: \(foodDetails.category)")
+                        Text("Ingredients: \(foodDetails.ingredients.joined(separator: ", "))")
+                    } else {
+                        Text("Scan a food barcode to get details")
+                    }
+                    Button("Scan Barcode") {
+                        isPresentingScanner = true
+                    }
+                    .sheet(isPresented: $isPresentingScanner) {
+                        CodeScannerView(
+                            codeTypes: [.ean13, .ean8, .upce],
+                            completion: handleScan
+                        )
+                    }
                 }
                 .navigationTitle("FoodMenu")
                 .toolbarTitleDisplayMode(.inline)
