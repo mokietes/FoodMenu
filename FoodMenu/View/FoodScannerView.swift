@@ -76,6 +76,18 @@ struct FoodScannerView: View {
     }
 
     struct FoodDetails: Identifiable {
+        var id = UUID()
+        var name: String
+        var brand: String
+        var category: String
+        var ingredients: [String]
+
+        init(from product: FoodData.Product) {
+            self.name = product.product_name ?? "Unknown"
+            self.brand = product.brands ?? "Unknown"
+            self.category = product.categories?.components(separatedBy: ", ").first ?? "Unknown"
+            self.ingredients = product.ingredients_text?.components(separatedBy: ", ") ?? []
+        }
     }
 
     struct FoodData: Codable {
