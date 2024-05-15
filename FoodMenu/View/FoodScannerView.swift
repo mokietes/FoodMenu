@@ -42,6 +42,14 @@ struct FoodScannerView: View {
         }
 
         func handleScan(result: Result<ScanResult, ScanError>) {
+            isPresentingScanner = false
+            switch result {
+            case .success(let scanResult):
+                scannedCode = scanResult.string
+                fetchFoodDetails(barcode: scanResult.string)
+            case .failure(let error):
+                print("Scanning failed: \(error.localizedDescription)")
+            }
         }
 
         func fetchFoodDetails(barcode: String) {
