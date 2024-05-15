@@ -11,8 +11,10 @@ import SwiftUI
 struct Tabview: View {
 
     @State private var selectTab: Tab = .profileView
+    @State private var bookmarkedFoods: [FoodDetails] = []
 
-        enum Tab {
+
+    enum Tab {
         case scan
         case search
         case profileView
@@ -20,14 +22,14 @@ struct Tabview: View {
 
     var body: some View {
         TabView(selection: $selectTab){
-            FoodScannerView()
+            FoodScannerView(bookmarkedFoods: $bookmarkedFoods)
                 .tabItem {
                     Image(systemName: "barcode.viewfinder")
                     Text("scan")
             }
                 .tag(Tab.scan)
             
-            BookmarkView ()
+            BookmarkView (bookmarkedFoods: $bookmarkedFoods)
                 .tabItem {
                     Image(systemName: "bookmark")
                 }
