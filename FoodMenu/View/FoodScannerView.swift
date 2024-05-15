@@ -91,6 +91,14 @@ struct FoodScannerView: View {
     }
 
     struct FoodData: Codable {
+        let product: Product
+
+        struct Product: Codable {
+            let product_name: String?
+            let brands: String?
+            let categories: String?
+            let ingredients_text: String?
+        }
 }
 
 

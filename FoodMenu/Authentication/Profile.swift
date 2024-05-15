@@ -10,7 +10,7 @@ import SwiftUI
 struct Profile: View {
     @EnvironmentObject var viewModel: AuthModel
     var body: some View {
-        if let user = viewModel.currentUser{
+        if let user = viewModel.currentUser {
             List {
                 Section {
                     HStack {
@@ -51,7 +51,6 @@ struct Profile: View {
             }
         }
     }
-    
 }
 
 #Preview {

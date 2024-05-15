@@ -31,6 +31,7 @@
 		31D1D8192BAFCF40007E67BD /* FoodMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1D8182BAFCF40007E67BD /* FoodMenuTests.swift */; };
 		31D1D8232BAFCF40007E67BD /* FoodMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1D8222BAFCF40007E67BD /* FoodMenuUITests.swift */; };
 		31D1D8252BAFCF40007E67BD /* FoodMenuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D1D8242BAFCF40007E67BD /* FoodMenuUITestsLaunchTests.swift */; };
+		31E143832BF44A8B0068B237 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E143822BF44A8B0068B237 /* BookmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		31D1D81E2BAFCF40007E67BD /* FoodMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D1D8222BAFCF40007E67BD /* FoodMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuUITests.swift; sourceTree = "<group>"; };
 		31D1D8242BAFCF40007E67BD /* FoodMenuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodMenuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		31E143822BF44A8B0068B237 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				31AE49582BCA2E820047235F /* Input.swift */,
 				31AE495C2BCA3AC80047235F /* SignupButton.swift */,
 				317EB9352BCFA24500C45CB2 /* SettingButton.swift */,
+				31E143822BF44A8B0068B237 /* BookmarkView.swift */,
 			);
 			path = Comp;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				31AE49592BCA2E820047235F /* Input.swift in Sources */,
 				3157C7B32BCBA6DD00789310 /* Profile.swift in Sources */,
 				317EB9362BCFA24500C45CB2 /* SettingButton.swift in Sources */,
+				31E143832BF44A8B0068B237 /* BookmarkView.swift in Sources */,
 				31D1D8082BAFCF34007E67BD /* FoodMenuApp.swift in Sources */,
 				31AE495B2BCA38620047235F /* Registeration.swift in Sources */,
 				31AE49572BCA2CF00047235F /* Login.swift in Sources */,
